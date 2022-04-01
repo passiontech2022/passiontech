@@ -20,5 +20,5 @@ next();
 
 myapp.get('/', function(req, res) {
    res.sendFile( __dirname);
-   res.sendFile(path.join(__dirname + '/Church/UI/home.html'));
+   res.sendFile(path.join(__dirname + '/church/UI/home.html'));
 });
