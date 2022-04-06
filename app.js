@@ -24,6 +24,9 @@ myapp.get('/', function(req, res) {
    res.sendFile( __dirname);
    res.sendFile(path.join(__dirname + '/church/UI/home.html'));
 });
+myapp.use(express.static(__dirname + '/church/U'));
+myapp.use(bodyParser.urlencoded({ extended: true }));
+myapp.use(bodyParser.json());
 const portr = process.env.PORT || 3000;
 
 myapp.listen(portr);
