@@ -1,3 +1,4 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 const { Client } = require('pg');
 const { Client } = require('pg');
 var express = require('express');
