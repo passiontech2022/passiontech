@@ -20,7 +20,7 @@ next();
 });
 
 myapp.get('/', function(req, res) {
-   res.sendFile( __dirname);
+   res.sendFile(__dirname);
    res.sendFile(path.join(__dirname + '/church/UI/home.html'));
 });
 myapp.use(express.static(__dirname + '/church/UI'));
