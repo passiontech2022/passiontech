@@ -25,5 +25,4 @@ myapp.get('/', function(req, res) {
 });
 myapp.use(express.static(__dirname + '/church/UI'));
 const portr = process.env.PORT || 3000;
-
 myapp.listen(portr);
