@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"> </script>
+</head>
+<body>
+<div id="preview"> </div>
+<form action="" method="post" enctype="multipart/form-data">
+
+<label for="Name">Full Name: </label>
+<input type="text" name="name" id= "full"/><br/>
+<label for="sex">Sex: </label>
+<select id="sex">
+<option value="Male" name="sexx">Male</option>
+<option value="Female" name="sexx">Female</option>
+</select><br/>
+<label for="age">Age : </label>
+<input type="text" name="age" id="agee" /><br/>
+<input type="button" id="jsonButton" value="PressHere"/>
+</form>
+
+<script>
+$(document).ready(function(e){
+$("#jsonButton").on('click',(function(e){
+var G = {};
+G.name= document.getElementById("full").value;
+G.sex= document.getElementById("sex").value;
+G.age= document.getElementById("agee").value;
+var t = JSON.stringify(G);
+$.ajax({
+url: "/ministry/signup",
+type: "POST",
+data: t,
+contentType: false,
+processData:false,
+success: function(data)
+{
+console.log(data);
+$("preview").html('<h2>'+ data + '</h2>');
+}
+});
+}));
+});
+
+</script>
+
+</body>
+</html>
